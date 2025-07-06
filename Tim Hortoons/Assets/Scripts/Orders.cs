@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class Orders : MonoBehaviour
 {
+    [SerializeField] private EmploymentBar employmentBar;
+    [SerializeField] private Cup cup;
+    [SerializeField] private Donut donut;
 
     int[] coffeeOrders = { 2, 1, 4, 0, 2, 3 };
     int[] milkOrders = { 2, 3, 0, 4, 2, 1 };
@@ -13,14 +16,12 @@ public class Orders : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-       }
+    }
 
     // Update is called once per frame
     void Update()
     {
-
     }
-
 
     public void GetCustomer()
     {
@@ -28,8 +29,12 @@ public class Orders : MonoBehaviour
         Debug.Log($"Customer {customerIndex + 1} has ordered {coffeeOrders[customerIndex]} coffee, {milkOrders[customerIndex]} milk, and {donutOrders[customerIndex]} donuts.");
     }
 
-    public int GetOrderScore(int numCoffee, int numMilk, string donutType)
+    public void GetOrderScore()
     {
+        int numCoffee = cup.coffeeAmt;
+        int numMilk = cup.milkAmt;
+        string donutType = donut.flavour;
+
         int score = 0;
 
         if (numCoffee == coffeeOrders[customerIndex] && numMilk == milkOrders[customerIndex])
@@ -54,6 +59,16 @@ public class Orders : MonoBehaviour
             Debug.Log($"Donut is wrong for Customer {customerIndex + 1}. Score: {score}");
         }
 
-        return score;
+        // Change employment bar based on score
+        if (score > 0)
+        {
+            employmentBar.addEmployment(score);
+            Debug.Log($"Employment increased by {score}. Current employment: {employmentBar.employment}");
+        }
+        else
+        {
+            employmentBar.reduceEmployment(-score);
+            Debug.Log($"Employment decreased by {-score}. Current employment: {employmentBar.employment}");
+        }
     }
 }
