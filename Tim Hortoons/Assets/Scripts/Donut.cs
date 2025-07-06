@@ -11,6 +11,15 @@ public class Donut : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+
+        vanillaDonut = transform.Find("Vanilla Donut_0")?.gameObject;
+        chocolateDonut = transform.Find("Chocolate Donut_0")?.gameObject;
+        strawberryDonut = transform.Find("Strawberry Donut_0")?.gameObject;
+
+        // Debug to confirm assignment
+        Debug.Log($"vanillaDonut: {vanillaDonut?.name}");
+        Debug.Log($"chocolateDonut: {chocolateDonut?.name}");
+        Debug.Log($"strawberryDonut: {strawberryDonut?.name}");
     }
 
     // Update is called once per frame
