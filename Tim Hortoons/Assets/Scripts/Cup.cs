@@ -19,12 +19,12 @@ public class Cup : MonoBehaviour
     void Start()
     {
         // Find the FillBar image in the scene
-        GameObject fillBarObj = GameObject.Find("CoffeeScreen/Cup2/FillBar");
+        GameObject fillBarObj = GameObject.Find("Tray/Cup2/FillBar");
         if (fillBarObj != null)
         {
             fillBarImage = fillBarObj.GetComponent<Image>();
         }
-        GameObject cup = GameObject.Find("CoffeeScreen/Cup2");
+        GameObject cup = GameObject.Find("Tray/Cup2");
         if (cup != null)
         {
             cupSlider = cup.GetComponent<Slider>();

@@ -4,17 +4,16 @@ public class Donut : MonoBehaviour
 {
     public string flavour = "";
 
-    public GameObject vanillaDonut;
-    public GameObject chocolateDonut;
-    public GameObject strawberryDonut;
+    [SerializeField] private GameObject vanillaDonut;
+    [SerializeField] private GameObject chocolateDonut;
+    [SerializeField] private GameObject strawberryDonut;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
-        vanillaDonut = transform.Find("Vanilla Donut_0")?.gameObject;
-        chocolateDonut = transform.Find("Chocolate Donut_0")?.gameObject;
-        strawberryDonut = transform.Find("Strawberry Donut_0")?.gameObject;
+        if (vanillaDonut != null) vanillaDonut.SetActive(false);
+        if (chocolateDonut != null) chocolateDonut.SetActive(false);
+        if (strawberryDonut != null) strawberryDonut.SetActive(false);
 
         // Debug to confirm assignment
         Debug.Log($"vanillaDonut: {vanillaDonut?.name}");
@@ -34,9 +33,9 @@ public class Donut : MonoBehaviour
             flavour = "vanilla";
             Debug.Log("added vanilla donut");
 
-            vanillaDonut.SetActive(true);
-            chocolateDonut.SetActive(false);
-            strawberryDonut.SetActive(false);
+            if (vanillaDonut != null) vanillaDonut.SetActive(true);
+            if (chocolateDonut != null) chocolateDonut.SetActive(false);
+            if (strawberryDonut != null) strawberryDonut.SetActive(false);
         }
         else
         {
@@ -51,9 +50,9 @@ public class Donut : MonoBehaviour
             flavour = "chocolate";
             Debug.Log("added chocolate donut");
 
-            vanillaDonut.SetActive(false);
-            chocolateDonut.SetActive(true);
-            strawberryDonut.SetActive(false);
+            if (vanillaDonut != null) vanillaDonut.SetActive(false);
+            if (chocolateDonut != null) chocolateDonut.SetActive(true);
+            if (strawberryDonut != null) strawberryDonut.SetActive(false);
         }
         else
         {
@@ -68,9 +67,9 @@ public class Donut : MonoBehaviour
             flavour = "strawberry";
             Debug.Log("added strawberry donut");
 
-            vanillaDonut.SetActive(false);
-            chocolateDonut.SetActive(false);
-            strawberryDonut.SetActive(true);
+            if (vanillaDonut != null) vanillaDonut.SetActive(false);
+            if (chocolateDonut != null) chocolateDonut.SetActive(false);
+            if (strawberryDonut != null) strawberryDonut.SetActive(true);
         }
         else
         {
