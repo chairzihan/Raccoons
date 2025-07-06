@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class StartButton : MonoBehaviour
 {
+
+    public GameObject StartScreen;
+     public GameObject Tutorial;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -12,5 +15,12 @@ public class StartButton : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void StartGame()
+    {
+        StartScreen.SetActive(false);
+        Tutorial.SetActive(true);
+
     }
 }
