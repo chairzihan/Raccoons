@@ -23,13 +23,15 @@ public class Cup : MonoBehaviour
         }
     }
 
-    void AddCoffee()
+    public void AddCoffee()
     {
         coffeeAmt++;
+        Debug.Log("added coffee");
     }
 
-    void addMilk()
+    public void AddMilk()
     {
         milkAmt++;
+        Debug.Log("added milk");
     }
 }
