@@ -13,6 +13,7 @@ public class Cup : MonoBehaviour
     public Color drinkColor;
 
     private Image fillBarImage;
+    private Slider cupSlider;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -22,6 +23,11 @@ public class Cup : MonoBehaviour
         if (fillBarObj != null)
         {
             fillBarImage = fillBarObj.GetComponent<Image>();
+        }
+        GameObject cup = GameObject.Find("CoffeeScreen/Cup2");
+        if (cup != null)
+        {
+            cupSlider = cup.GetComponent<Slider>();
         }
     }
 
@@ -33,6 +39,10 @@ public class Cup : MonoBehaviour
         if (totalAmt >= 4)
         {
             isFull = true;
+        }
+        if(cupSlider != null)
+        {
+            cupSlider.value = totalAmt;
         }
 
         if (coffeeAmt == 0 && milkAmt == 0)
