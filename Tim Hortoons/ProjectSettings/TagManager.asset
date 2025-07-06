@@ -12,6 +12,23 @@ TagManager:
   - 
   - Water
   - UI
+  - TopBar
+  - 
+  - Buttons
+  - 
+  - 
+  - Food
+  - 
+  - 
+  - 
+  - 
+  - 
+  - Items
+  - 
+  - 
+  - 
+  - 
+  - Counter
   - 
   - 
   - 
@@ -20,24 +37,7 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - BG
   m_SortingLayers:
   - name: Default
     uniqueID: 0
