@@ -25,13 +25,27 @@ public class Cup : MonoBehaviour
 
     public void AddCoffee()
     {
-        coffeeAmt++;
-        Debug.Log("added coffee");
+        if (!isFull)
+        {
+            coffeeAmt++;
+            Debug.Log("added coffee");
+        }
+        else
+        {
+            Debug.Log("coffee not added, cup already full");
+        }
     }
 
     public void AddMilk()
     {
-        milkAmt++;
-        Debug.Log("added milk");
+        if (!isFull)
+        {
+            milkAmt++;
+            Debug.Log("added milk");
+        }
+        else
+        {
+            Debug.Log("milk not added, cup already full");
+        }
     }
 }
