@@ -4,16 +4,18 @@ public class Donut : MonoBehaviour
 {
     public string flavour = "";
 
+    public GameObject vanillaDonut;
+    public GameObject chocolateDonut;
+    public GameObject strawberryDonut;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
     }
 
     // Update is called once per frame
     void Update()
     {
-
     }
 
     public void AddVanillaDonut()
@@ -22,6 +24,10 @@ public class Donut : MonoBehaviour
         {
             flavour = "vanilla";
             Debug.Log("added vanilla donut");
+
+            vanillaDonut.SetActive(true);
+            chocolateDonut.SetActive(false);
+            strawberryDonut.SetActive(false);
         }
         else
         {
@@ -35,6 +41,10 @@ public class Donut : MonoBehaviour
         {
             flavour = "chocolate";
             Debug.Log("added chocolate donut");
+
+            vanillaDonut.SetActive(false);
+            chocolateDonut.SetActive(true);
+            strawberryDonut.SetActive(false);
         }
         else
         {
@@ -48,6 +58,10 @@ public class Donut : MonoBehaviour
         {
             flavour = "strawberry";
             Debug.Log("added strawberry donut");
+
+            vanillaDonut.SetActive(false);
+            chocolateDonut.SetActive(false);
+            strawberryDonut.SetActive(true);
         }
         else
         {
