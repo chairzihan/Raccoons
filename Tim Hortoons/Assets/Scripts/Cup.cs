@@ -1,9 +1,8 @@
 using UnityEngine;
-using UnityEngine.UI; // Add this for Image
+using UnityEngine.UI;
 
 public class Cup : MonoBehaviour
 {
-
     public bool isFull = false;
     public int coffeeAmt = 0;
     public int milkAmt = 0;
@@ -12,35 +11,27 @@ public class Cup : MonoBehaviour
     public float coffeeToMilkRatio;
     public Color drinkColor;
 
-    private Image fillBarImage;
-    private Slider cupSlider;
+    [SerializeField] private Image fillBarImage;
+    [SerializeField] private Slider cupSlider;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        // Find the FillBar image in the scene
-        GameObject fillBarObj = GameObject.Find("Tray/Cup2/FillBar");
-        if (fillBarObj != null)
-        {
-            fillBarImage = fillBarObj.GetComponent<Image>();
-        }
-        GameObject cup = GameObject.Find("Tray/Cup2");
-        if (cup != null)
-        {
-            cupSlider = cup.GetComponent<Slider>();
-        }
+        // No need to find objects in code; assign fillBarImage and cupSlider in the Inspector.
     }
 
-    // Update is called once per frame
     void Update()
     {
+
+        if(Time.timeScale == 0)
+        {
+            Debug.Log("thsi is paused");
+        }
         totalAmt = coffeeAmt + milkAmt;
-        // If cup is full, then update variable
         if (totalAmt >= 4)
         {
             isFull = true;
         }
-        if(cupSlider != null)
+        if (cupSlider != null)
         {
             cupSlider.value = totalAmt;
         }
@@ -114,49 +105,6 @@ public class Cup : MonoBehaviour
             ColorUtility.TryParseHtmlString("#000000", out drinkColor); // Only coffee (black)
         }
 
-
-
-        // try
-        // {
-        //     coffeeToMilkRatio = (float)System.Math.Round((double)coffeeAmt / milkAmt, 2);
-
-        //     switch (coffeeToMilkRatio)
-        //     {
-        //         case 0:
-        //             ColorUtility.TryParseHtmlString("#FFFFFF", out drinkColor); // White color for milk only
-        //             Debug.Log("No coffee added, only milk present.");
-        //             break;
-        //         case 0.33:
-        //             ColorUtility.TryParseHtmlString("#F5E3CB", out drinkColor);
-        //             Debug.Log("One third as much coffee as milk.");
-        //             break;
-        //         case 0.5:
-        //             ColorUtility.TryParseHtmlString("#EEBB7A", out drinkColor);
-        //             Debug.Log("Half as much coffee as milk.");
-        //             break;
-        //         case 1:
-        //             ColorUtility.TryParseHtmlString("#E28F48", out drinkColor);
-        //             Debug.Log("Equal amounts of coffee and milk.");
-        //             break;
-        //         case 2:
-        //             ColorUtility.TryParseHtmlString("#6C3225", out drinkColor);
-        //             Debug.Log("Twice as much coffee as milk.");
-        //             break;
-        //         case 3:
-        //             ColorUtility.TryParseHtmlString("#1A1512", out drinkColor);
-        //             Debug.Log("Three times as much coffee as milk.");
-        //             break;
-        //     }
-        // }
-        // catch (System.DivideByZeroException)
-        // {
-        //     Debug.Log("No milk added, coffee to milk ratio cannot be calculated.");
-        //     ColorUtility.TryParseHtmlString("#000000", out drinkColor);
-        // }
-
-        // Debug.Log(drinkColor);
-
-        // Update FillBar color if reference found
         if (fillBarImage != null)
         {
             fillBarImage.color = drinkColor;
