@@ -22,15 +22,17 @@ public class Cup : MonoBehaviour
     void Update()
     {
 
-        if(Time.timeScale == 0)
-        {
-            Debug.Log("thsi is paused");
-        }
         totalAmt = coffeeAmt + milkAmt;
+
         if (totalAmt >= 4)
         {
             isFull = true;
         }
+        else
+        {
+            isFull = false;
+        }
+
         if (cupSlider != null)
         {
             cupSlider.value = totalAmt;
@@ -134,6 +136,19 @@ public class Cup : MonoBehaviour
         else
         {
             Debug.Log("milk not added, cup already full");
+        }
+    }
+
+    public void ClearCup()
+    {
+        coffeeAmt = 0;
+        milkAmt = 0;
+        totalAmt = 0;
+        isFull = false;
+        Debug.Log("Cup cleared");
+        if (cupSlider != null)
+        {
+            cupSlider.value = totalAmt;
         }
     }
 }

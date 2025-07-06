@@ -2245,7 +2245,6 @@ GameObject:
   - component: {fileID: 531470174}
   - component: {fileID: 531470173}
   - component: {fileID: 531470172}
-  - component: {fileID: 531470171}
   m_Layer: 5
   m_Name: TrayScreen
   m_TagString: Untagged
@@ -2253,26 +2252,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &531470171
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 531470170}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f61ff097a49dc44bb79c8a4928ceb0c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isFull: 0
-  coffeeAmt: 0
-  milkAmt: 0
-  totalAmt: 0
-  coffeeToMilkRatio: 0
-  drinkColor: {r: 0, g: 0, b: 0, a: 0}
-  fillBarImage: {fileID: 308527477}
-  cupSlider: {fileID: 532620861}
 --- !u!114 &531470172
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4041,7 +4020,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &965985182
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5743,7 +5722,6 @@ GameObject:
   - component: {fileID: 1378515752}
   - component: {fileID: 1378515751}
   - component: {fileID: 1378515750}
-  - component: {fileID: 1378515749}
   - component: {fileID: 1378515748}
   m_Layer: 5
   m_Name: DonutScreen
@@ -5768,26 +5746,6 @@ MonoBehaviour:
   vanillaDonut: {fileID: 615117472}
   chocolateDonut: {fileID: 1172695085}
   strawberryDonut: {fileID: 1913464758}
---- !u!114 &1378515749
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1378515747}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f61ff097a49dc44bb79c8a4928ceb0c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isFull: 0
-  coffeeAmt: 0
-  milkAmt: 0
-  totalAmt: 0
-  coffeeToMilkRatio: 0
-  drinkColor: {r: 0, g: 0, b: 0, a: 0}
-  fillBarImage: {fileID: 0}
-  cupSlider: {fileID: 0}
 --- !u!114 &1378515750
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8657,6 +8615,13 @@ MonoBehaviour:
   employmentBar: {fileID: 731807229}
   cup: {fileID: 1011852452}
   donut: {fileID: 1378515748}
+  customers:
+  - {fileID: 930736406}
+  - {fileID: 1415699429}
+  - {fileID: 1630705850}
+  - {fileID: 1294100598}
+  - {fileID: 1951758840}
+  - {fileID: 1951758840}
 --- !u!1 &2091531617
 GameObject:
   m_ObjectHideFlags: 0

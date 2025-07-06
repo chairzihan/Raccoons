@@ -5,18 +5,22 @@ public class Orders : MonoBehaviour
     [SerializeField] private EmploymentBar employmentBar;
     [SerializeField] private Cup cup;
     [SerializeField] private Donut donut;
+    [SerializeField] private GameObject[] customers;
 
     int[] coffeeOrders = { 2, 1, 4, 0, 2, 3 };
     int[] milkOrders = { 2, 3, 0, 4, 2, 1 };
     string[] donutOrders = { "chocolate", "strawberry", "vanilla", "strawberry", "chocolate", "vanilla" };
 
     int numCustomers = 6;
-    int customerIndex = 5;
+    int customerIndex;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-    Debug.Log($"Customer {customerIndex + 1} has ordered {coffeeOrders[customerIndex]} coffee, {milkOrders[customerIndex]} milk, and {donutOrders[customerIndex]} donuts.");
+        GetCustomer();
+        Debug.Log($"Customer {customerIndex + 1} has ordered {coffeeOrders[customerIndex]} coffee, {milkOrders[customerIndex]} milk, and {donutOrders[customerIndex]} donuts.");
+
+        ShowCurrentCustomer();
     }
 
     // Update is called once per frame
@@ -28,6 +32,15 @@ public class Orders : MonoBehaviour
     {
         customerIndex = Random.Range(0, numCustomers);
         Debug.Log($"Customer {customerIndex + 1} has ordered {coffeeOrders[customerIndex]} coffee, {milkOrders[customerIndex]} milk, and {donutOrders[customerIndex]} donuts.");
+        ShowCurrentCustomer();
+    }
+
+    private void ShowCurrentCustomer()
+    {
+        for (int i = 0; i < customers.Length; i++)
+        {
+            customers[i].SetActive(i == customerIndex);
+        }
     }
 
     public void GetOrderScore()
@@ -73,5 +86,14 @@ public class Orders : MonoBehaviour
             employmentBar.reduceEmployment(-score);
             Debug.Log($"Employment decreased by {-score}. Current employment: {employmentBar.employment}");
         }
+
+        clearTray();
+    }
+
+    public void clearTray()
+    {
+        cup.ClearCup();
+        donut.ClearDonut();
+        GetCustomer(); // Get a new customer after clearing the tray
     }
 }

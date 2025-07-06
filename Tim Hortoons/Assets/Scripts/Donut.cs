@@ -76,4 +76,14 @@ public class Donut : MonoBehaviour
             Debug.Log("can't add strawberry, donut already selected");
         }
     }
+
+    public void ClearDonut()
+    {
+        flavour = "";
+        Debug.Log("cleared donut");
+
+        if (vanillaDonut != null) vanillaDonut.SetActive(false);
+        if (chocolateDonut != null) chocolateDonut.SetActive(false);
+        if (strawberryDonut != null) strawberryDonut.SetActive(false);
+    }
 }
