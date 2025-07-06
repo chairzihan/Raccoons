@@ -11,11 +11,12 @@ public class Orders : MonoBehaviour
     string[] donutOrders = { "chocolate", "strawberry", "vanilla", "strawberry", "chocolate", "vanilla" };
 
     int numCustomers = 6;
-    int customerIndex;
+    int customerIndex = 5;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+    Debug.Log($"Customer {customerIndex + 1} has ordered {coffeeOrders[customerIndex]} coffee, {milkOrders[customerIndex]} milk, and {donutOrders[customerIndex]} donuts.");
     }
 
     // Update is called once per frame
@@ -37,6 +38,7 @@ public class Orders : MonoBehaviour
 
         int score = 0;
 
+        Debug.Log($"Comparing coffee: {numCoffee} (player) vs {coffeeOrders[customerIndex]} (order), milk: {numMilk} (player) vs {milkOrders[customerIndex]} (order)");
         if (numCoffee == coffeeOrders[customerIndex] && numMilk == milkOrders[customerIndex])
         {
             score += 5;
@@ -48,6 +50,7 @@ public class Orders : MonoBehaviour
             Debug.Log($"Coffee is wrong for Customer {customerIndex + 1}. Score: {score}");
         }
 
+        Debug.Log($"Comparing donutType: '{donutType}' with order: '{donutOrders[customerIndex]}'");
         if (donutType == donutOrders[customerIndex])
         {
             score += 5;
