@@ -7,10 +7,14 @@ Mistakes have consequences! You have no second chance nor mercy from your manage
 Serve smart and don’t get fired!
 Welcome to Tim Hortoons™.
 
+## Demo
+
+Play Tim Hortoons [here](https://chairzihan.itch.io/tim-hortoons)!
+
 ## Tech Stack
 
 Built using the Unity game engine and C#.
 
 ## Contributors
 
-This project was created at JPEG—Ottawa's first all-girls 25-hour hackathon—by Bella Liu, [Angela Zheng](https://github.com/angelazheng96), and [Claire Zhong](https://github.com/chairzihan).
+This project was created at JPEG—Ottawa's first all-girls 25-hour hackathon—by Bella Liu (artist), [Angela Zheng](https://github.com/angelazheng96), and [Claire Zhong](https://github.com/chairzihan).
