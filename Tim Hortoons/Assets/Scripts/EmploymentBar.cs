@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class EmploymentBar : MonoBehaviour
 {// Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -16,6 +17,12 @@ public class EmploymentBar : MonoBehaviour
     void Update()
     {
         employmentSlider.value = employment;
+
+        if (employmentSlider.value <= 0)
+        {
+            Debug.Log("Employment is at zero. Game Over!");
+            SceneManager.LoadScene("EndScene");
+        }
     }
 
     public void addEmployment(int amount)
